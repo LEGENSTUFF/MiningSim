@@ -31,11 +31,11 @@ if username != "":
 	pickaxe = "Wooden Pickaxe"
 	stars = 0
 	level = 1
-	
 	denied = False
 	coderedeemed1 = False
 	coderedeemed2 = False
 	coderedeemed3 = False
+	collections = ["a",True]
 	inventory = [['Stone:', 0]]
 	pickaxes = [['Wooden Pickaxe', 59]]
 	enchantments = [["Fortune", 0], ["Haste", 0], ["Unbreakable", 0]]
@@ -75,6 +75,7 @@ if username != "":
 		skin = db["skin"]
 		skins = db["skins"]
 		sidequests = db["sidequests"]
+		collections = db["collections"]
 			
 	print("Welcome,",username)
 	print("1. Tutorial")
@@ -111,6 +112,7 @@ def save():
 			db["skin"] = skin
 			db["skins"] = skins
 			db["sidequests"] = sidequests
+			db["collections"] = collections
 
 
 while True:
