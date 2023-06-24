@@ -26,7 +26,7 @@ if username != "":
 	skin = "None"
 	skins = [["Default","Common"]]
 	sidequests = [["1 Star:","Mine times",5],["2 Stars:","Mine times",20],["3 Stars:","Repair pickaxe durability",50]]
-	world = "World 1"
+	world = "World 1 (Overworld) - Starter Realm"
 	readthroughall = False
 	pickaxe = "Wooden Pickaxe"
 	stars = 0
@@ -462,7 +462,7 @@ while True:
 						break
 			pickaxe = "Netherrack Pickaxe"
 			pickaxes.append(["Netherrack Pickaxe",100])
-			world = "World 2"
+			world = "World 2 (Nether Realm) - Starter Realm"
 			money = 0
 			inventory.append(["Netherrack:",0])
 			inventory.append(["Gold Nuggets:",0])
@@ -514,7 +514,7 @@ while True:
 						break
 			pickaxe = "Endstone Pickaxe"
 			pickaxes.append(["Endstone Pickaxe",500])
-			world = "World 3"
+			world = "World 3 (End World) - Starter Realm"
 			money = 0
 			inventory.append(["Endstone:",0])
 			inventory.append(["End Brick:",0])
@@ -566,12 +566,12 @@ while True:
 					if skillguardhealth < 0:
 						print("Skill Guardian has no more health!\n")
 						break
-			pickaxe = "Endstone Pickaxe"
-			pickaxes.append(["Endstone Pickaxe",500])
-			world = "World 3"
+			pickaxe = "Dirt Pickaxe"
+			pickaxes.append(["Dirt Pickaxe",25])
+			world = "World 4 (Noob World) - Skill Realm"
 			money = 0
-			inventory.append(["Endstone:",0])
-			inventory.append(["End Brick:",0])
+			inventory.append(["Dirt:",0])
+			inventory.append(["Grass:",0])
 	elif choice == "11":
 		os.system("clear")
 		print("BRAND NEW UPDATE WITH A SEASON!")
