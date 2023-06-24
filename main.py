@@ -408,10 +408,6 @@ while True:
 		s.start()
 		dsta = False
 		break
-	
-	elif choice == "easterbossfight":
-		print("Expired code!")
-		input("Press enter to continue: ")
 	elif choice == "9":
 		for i in range(len(skins)):
 			print(skins[(i)][0]+": "+skins[(i)][1])
@@ -578,7 +574,7 @@ while True:
 			inventory.append(["End Brick:",0])
 	elif choice == "11":
 		os.system("clear")
-		print("Update out soon 👀")
+		print("BRAND NEW UPDATE WITH A SEASON!")
 		print("1/1")
 		print("1. Next")
 		print("2. Exit")

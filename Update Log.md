@@ -1,6 +1,6 @@
 Update Log For Mining Simulator
 
-# Moved to the website
+# Moved to discord
 ____________________________
 **Not Latest update!**
 
