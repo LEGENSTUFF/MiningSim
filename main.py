@@ -35,7 +35,7 @@ if username != "":
 	coderedeemed1 = False
 	coderedeemed2 = False
 	coderedeemed3 = False
-	collections = ["a",True]
+	collections = [["a",True]]
 	inventory = [['Stone:', 0]]
 	pickaxes = [['Wooden Pickaxe', 59]]
 	enchantments = [["Fortune", 0], ["Haste", 0], ["Unbreakable", 0]]
@@ -346,7 +346,7 @@ while True:
 		print(inventory[17][0], inventory[17][1])
 		print(inventory[18][0], inventory[18][1])
 		print(inventory[19][0], inventory[19][1])
-	elif pickaxechecker == 46 or pickaxechecker == 48:
+	elif pickaxechecker == 46 or pickaxechecker == 48 or pickaxechecker == 50:
 		print(inventory[16][0], inventory[16][1])
 		print(inventory[17][0], inventory[17][1])
 		print(inventory[18][0], inventory[18][1])
@@ -368,6 +368,8 @@ while True:
 		print("11. USE WORLD 2 KEY")
 	elif pickaxechecker == 38:
 		print("11. USE WORLD 3 KEY")
+	elif pickaxechecker == 50:
+		print("11. USE WORLD 4 KEY")
 	else:
 		if readthroughall == False:
 			print("11. Newsfeeds (!)")
@@ -465,6 +467,7 @@ while True:
 			pickaxe = "Netherrack Pickaxe"
 			pickaxes.append(["Netherrack Pickaxe",100])
 			world = "World 2"
+			money = 0
 			inventory.append(["Netherrack:",0])
 			inventory.append(["Gold Nuggets:",0])
 	elif choice == "11" and pickaxechecker == 38:
@@ -516,11 +519,66 @@ while True:
 			pickaxe = "Endstone Pickaxe"
 			pickaxes.append(["Endstone Pickaxe",500])
 			world = "World 3"
+			money = 0
+			inventory.append(["Endstone:",0])
+			inventory.append(["End Brick:",0])
+	elif choice == "11" and pickaxechecker == 50:
+		print("Are you sure? This resets all your money and pickaxes!\n1. Yes\n2. No")
+		choice = input("Choose an option: ")
+		if choice == "1":
+			for i in range(5, 0, -1):
+				print("Rebirthing... ("+str(i)+")")
+				time.sleep(1)
+			print("Rebirthed!")
+			print("Wait... something is happening!")
+			beginningstring0 = "AHHHHHHHHHHH"
+			for char0 in beginningstring0:
+				sys.stdout.write(char0)
+				sys.stdout.flush()
+				time.sleep(.222)
+			print("The SKILL GUARDIAN comes out of nowhere!")
+			time.sleep(2)
+			print("He does not allow you to pass... You resort to violence")
+			time.sleep(2)
+			skillguardhealth = 100
+			health = 100
+			bunnyturn = False
+			while True:
+				if bunnyturn == False:
+					if health > 0:
+						print("You attack!")
+						damage = random.randint(1,10)
+						skillguardhealth -= damage
+						print("You did",damage,"damage to the Skill Guardian!")
+						print("Health:",health)
+						print("Skill Guardian Health:",skillguardhealth)
+						input("Press enter to continue")
+						bunnyturn = True
+					else:
+						print("No more health!")
+						print("You lose!")
+				elif bunnyturn == True:
+					if skillguardhealth > 0:
+						print("Skill Guardian attacks!")
+						damage = random.randint(1,10)
+						health -= damage
+						print("Skill Guardian did",damage,"damage to you!")
+						print("Health:",health)
+						print("Skill Guardian Health:",skillguardhealth)
+						input("Press enter to continue")
+						bunnyturn = False
+					if skillguardhealth < 0:
+						print("Skill Guardian has no more health!\n")
+						break
+			pickaxe = "Endstone Pickaxe"
+			pickaxes.append(["Endstone Pickaxe",500])
+			world = "World 3"
+			money = 0
 			inventory.append(["Endstone:",0])
 			inventory.append(["End Brick:",0])
 	elif choice == "11":
 		os.system("clear")
-		print("V5 COMING WITH A *SEASON PASS* (season 1) IS OUT TOMORROW!!!")
+		print("Update out soon 👀")
 		print("1/1")
 		print("1. Next")
 		print("2. Exit")
@@ -604,7 +662,7 @@ while True:
 	elif choice == "really early again" and coderedeemed3 == True:
 		print("Redeemed already")
 		input("Press [enter] to continue")
-	if pickaxechecker == 48 and denied == False:
+	if pickaxechecker == 50 and denied == False:
 		os.system("clear")
 		print("Psst!")
 		time.sleep(1)
@@ -634,6 +692,9 @@ while True:
 			pickaxes = [["Wooden Pickaxe",59]]
 			world = "World 1"
 			inventory = [["Stone:",0]]
+			s = thread(target=save)
+			s.start()
+			dsta = False
 			break
 		else:
 			denied = True
@@ -665,9 +726,9 @@ while update == False:
 	#       "seconds")
 	# print("Next update soon!")
 	print("Previous update:")
-	print("v4.0 - Quests Update\n")
-	print("\nNext update:")
 	print("v5.0 - Season Pass Update\n")
+	print("Next update:")
+	print("v5.1 - Noob Update\n")
 	mont = dt.month
 	mon=6-dt.month
 	day=29-dt.day
@@ -686,7 +747,7 @@ while update == False:
 	mn=60-dt.minute
 	sec=60-dt.second
 	print("Next update in",mon,"months,", day, "days,", hr, "hours,", mn, "minutes and", sec,
-	      "seconds")
+	      "seconds\n")
 	# print("Downtime ends in",mon,"months,", day, "days,", hr, "hours,", mn, "minutes and", sec,
 	#       "seconds")
 	mont = dt.month
