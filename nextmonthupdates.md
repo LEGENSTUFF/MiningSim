@@ -93,8 +93,16 @@ Galaxy
 
 THE ENTIRE UNIVERSE
 
-# WOOD REALM (All in 1 world)
+# WOOD REALM
 
 wood world
 
-all types of wood and log and stripped log
+all types of wood 
+
+log world
+
+logs
+
+stripped log world
+
+stripped log
