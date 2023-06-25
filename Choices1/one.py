@@ -549,6 +549,15 @@ def one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests):
 				inventory[20][1] += enderdragonpiecesgained
 				print("You got",enderdragonpiecesgained,"ender dragon pieces,",unbreakableendstonegained,"unbreakable endstone,",purpurgained,"purpur,",endbrickgained,"endbrick and",endstonegained,"endstone but lost", str(durabilityloss),"pickaxe durability!")
 				input("Press [enter] to continue")
+	elif pickaxe == "Dirt Pickaxe":
+		if enchantments[1][1] == 0:
+			for i in range(5, 0, -1):
+				print("Mining,", i, "seconds left")
+				time.sleep(1)
+			if enchantments[0][1] == 0:
+				grassgained = random.randint(1, 5)
+			inventory[21][1] += grassgained
+			print("You got",grassgained,"grass!")
 	if questchecker == 2:
 		if quests[0][1] < 5:
 			quests[0][1] += 1

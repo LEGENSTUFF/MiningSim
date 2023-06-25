@@ -126,6 +126,7 @@ while True:
 	# 24 is netherrack 26 is gold nugget 28 is quartz 30 is quartz and gold 32 is ancient debris 34 is netherite scrap 36 is netherite 38 is key 40 is endstone(pickaxe 20 in the list is [19])
 	os.system('clear')
 	print("Main Menu")
+	if world != "World 4 (Noob World) - Skill Realm"
 	print("Money: $" + str(money))
 	print("Skin:",skin)
 	if quests[0][1] < 5:
@@ -570,7 +571,6 @@ while True:
 			pickaxes.append(["Dirt Pickaxe",25])
 			world = "World 4 (Noob World) - Skill Realm"
 			money = 0
-			inventory.append(["Dirt:",0])
 			inventory.append(["Grass:",0])
 	elif choice == "11":
 		os.system("clear")

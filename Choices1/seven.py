@@ -1,7 +1,7 @@
 import os
 def seven(stars,level,skins):
 	os.system("clear")
-	print("Season 1 for another 30 days!")
+	print("Next season in 19 days! (Last updated: 29th June 2023)")
 	print("Level:",level)
 	print("Stars:",stars)
 	print("Max level: 30")
@@ -68,7 +68,6 @@ def seven(stars,level,skins):
 				level += 1
 				stars -= 5
 	elif level == 30:
-		print("MAX LEVEL!")
-		print("Next season in 30 days! (Last updated: 18th June 2023)")
+		print("MAX LEVEL! GG!")
 	print("Press [enter] to continue")
 	return stars,level,skins

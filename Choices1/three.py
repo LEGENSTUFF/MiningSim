@@ -242,7 +242,7 @@ def three(pickaxes,inventory,money,quests):
 				print("You just got the SKILL REALM + WORLD 4 KEY!!!")
 			else:
 				print("Not enough money!")
-	elif pickaxechecker == 50:
+	elif pickaxechecker == 52:
 		print("1. Grass Pickaxe - 25 GRASS")
 		craftchoice = input("What to craft? ")
 		if craftchoice == "1":
@@ -253,17 +253,28 @@ def three(pickaxes,inventory,money,quests):
 				print("You just got the GRASS PICKAXE!!!")
 			else:
 				print("Not enough Grass!")
-	elif pickaxechecker == 52:
+	elif pickaxechecker == 54:
 		print("1. Wood Pickaxe - 25 WOOD")
 		craftchoice = input("What to craft? ")
 		if craftchoice == "1":
 			if inventory[23][1] >= 25:
-				pickaxes.append(["Wood Pickaxe",10000])
+				pickaxes.append(["Wood Pickaxe",100])
+				inventory.append(["Diamonds":0])
 				inventory[23][1] -= 25
 				print("You just got the WOOD PICKAXE!!!")
 			else:
 				print("Not enough Wood!")
+	elif pickaxechecker == 56:
+		print("1. World 5 Key - 25 DIAMONDS")
+		craftchoice = input("What to craft? ")
+		if craftchoice == "1":
+			if inventory[24][1] >= 25:
+				pickaxes.append(["World 5 Key",10000])
+				inventory[24][1] -= 25
+				print("You just got the WORLD 5 KEY!!!")
+			else:
+				print("Not enough Diamonds!")
 	else:
-		print("New crafts on 15/5/2023")
+		print("New crafts on 6/7/2023")
 	input("Press [enter] to continue")
 	return pickaxes,inventory,money,quests
