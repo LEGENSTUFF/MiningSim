@@ -1,5 +1,5 @@
 import os
-def three(pickaxes,inventory,money,quests):
+def three(pickaxes,inventory,money,quests,pickaxe):
 	os.system("clear")
 	pickaxechecker = sum(len(l) for l in pickaxes)
 	if pickaxechecker == 2:
@@ -246,35 +246,37 @@ def three(pickaxes,inventory,money,quests):
 		print("1. Grass Pickaxe - 25 GRASS")
 		craftchoice = input("What to craft? ")
 		if craftchoice == "1":
-			if inventory[22][1] >= 25:
+			if inventory[21][1] >= 25:
 				pickaxes.append(["Grass Pickaxe",50])
 				inventory.append(["Wood:",0])
-				inventory[22][1] -= 25
-				print("You just got the GRASS PICKAXE!!!")
+				inventory[21][1] -= 25
+				pickaxe = "Grass Pickaxe"
+				print("You just got the GRASS PICKAXE (Auto-equipped)!!!")
 			else:
 				print("Not enough Grass!")
 	elif pickaxechecker == 54:
 		print("1. Wood Pickaxe - 25 WOOD")
 		craftchoice = input("What to craft? ")
 		if craftchoice == "1":
-			if inventory[23][1] >= 25:
+			if inventory[22][1] >= 25:
 				pickaxes.append(["Wood Pickaxe",100])
 				inventory.append(["Diamonds":0])
-				inventory[23][1] -= 25
-				print("You just got the WOOD PICKAXE!!!")
+				inventory[22][1] -= 25
+				pickaxe = "Wood Pickaxe"
+				print("You just got the WOOD PICKAXE (Auto-equipped)!!!")
 			else:
 				print("Not enough Wood!")
 	elif pickaxechecker == 56:
 		print("1. World 5 Key - 25 DIAMONDS")
 		craftchoice = input("What to craft? ")
 		if craftchoice == "1":
-			if inventory[24][1] >= 25:
+			if inventory[23][1] >= 25:
 				pickaxes.append(["World 5 Key",10000])
-				inventory[24][1] -= 25
+				inventory[23][1] -= 25
 				print("You just got the WORLD 5 KEY!!!")
 			else:
 				print("Not enough Diamonds!")
 	else:
 		print("New crafts on 6/7/2023")
 	input("Press [enter] to continue")
-	return pickaxes,inventory,money,quests
+	return pickaxes,inventory,money,quests,pickaxe

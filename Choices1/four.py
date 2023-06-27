@@ -712,7 +712,7 @@ def four(pickaxe,pickaxes):
 			else:
 				pickaxe = "Unbreakable Endstone Pickaxe"
 				print("Unbreakable Endstone Pickaxe equipped!")
-	elif pickaxechecker == 48:
+	elif pickaxechecker == 48 or pickaxechecker == 50:
 		print("1. Endstone Pickaxe")
 		print("2. End Brick Pickaxe")
 		print("3. Purpur Pickaxe")

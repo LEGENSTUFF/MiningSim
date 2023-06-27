@@ -356,7 +356,10 @@ while True:
 	print("--------------------------------------------------------")
 	print("ALWAYS TALK TO TIM IMMEDIATELY ONCE YOU HAVE COMPLETED A QUEST! YOUR GAME WILL BREAK IF YOU DON'T!")
 	print("1. Mine")
-	print("2. Sell")
+	if world != "World 4 (Noob World) - Skill Realm":
+		print("2. Sell")
+	else:
+		print("2. Sell (!DISALBLED FOR WORLDS 4,5 AND 6!)")
 	print("3. Craft")
 	print("4. Equip")
 	print("5. Repair")
@@ -385,7 +388,7 @@ while True:
 		pickaxes,pickaxe,inventory,money,enchantments = two(pickaxes,pickaxe,inventory,money,enchantments)
 		pass
 	elif choice == "3":
-		pickaxes, inventory, money,quests = three(pickaxes,inventory,money,quests)
+		pickaxes, inventory, money,quests,pickaxe = three(pickaxes,inventory,money,quests,pickaxe)
 		pass
 	elif choice == "4":
 		pickaxe,pickaxes = four(pickaxe,pickaxes)

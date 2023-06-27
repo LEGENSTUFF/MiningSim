@@ -558,6 +558,24 @@ def one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests):
 				grassgained = random.randint(1, 5)
 			inventory[21][1] += grassgained
 			print("You got",grassgained,"grass!")
+	elif pickaxe == "Grass Pickaxe":
+		if enchantments[1][1] == 0:
+			for i in range(5, 0, -1):
+				print("Mining,", i, "seconds left")
+				time.sleep(1)
+			if enchantments[0][1] == 0:
+				woodgained = random.randint(1, 5)
+			inventory[22][1] += grassgained
+			print("You got",woodgained,"wood!")
+	elif pickaxe == "Wood Pickaxe":
+		if enchantments[1][1] == 0:
+			for i in range(5, 0, -1):
+				print("Mining,", i, "seconds left")
+				time.sleep(1)
+			if enchantments[0][1] == 0:
+				diamondsgained = random.randint(1, 5)
+			inventory[23][1] += diamondsgained
+			print("You got",diamondsgained,"diamonds!")
 	if questchecker == 2:
 		if quests[0][1] < 5:
 			quests[0][1] += 1
