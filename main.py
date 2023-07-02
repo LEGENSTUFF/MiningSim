@@ -407,14 +407,19 @@ while True:
 				money += 250
 			elif chance <= 0.8:
 				print("You got $500! (-50%)")
+				money += 500
 			elif chance <= 0.88:
 				print("You got $1000 (+0%)")
+				money += 1000
 			elif chance <= 0.95:
 				print("You got $1500 (+50%)")
+				money += 1500
 			elif chance <= 0.9899999999:
-				print("You got the 'Floppa' skin! (Event)")
+				print("You got the 'Floppa' skin! (Exclusive)")
+				skins.append(["Floppa","Exclusive"])
 			elif chance <= 1:
-				print("YOU GOT THE 'SLEIPNIR' SKIN! (Event)")
+				print("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
+				skins.append(["Sleipnir","Exclusive"])
 	if choice == "1":
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
