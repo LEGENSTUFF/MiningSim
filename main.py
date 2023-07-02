@@ -356,11 +356,11 @@ while True:
 	elif pickaxechecker == 52: #grass
 		print(inventory[21][0], inventory[21][1])
 	elif pickaxechecker == 54: #wood
-		print(inventory[21][0], inventory[21][1])
+		print(inventory[22][0], inventory[22][1])
 	elif pickaxechecker == 56: #diamonds
-		print(inventory[21][0], inventory[21][1])
+		print(inventory[23][0], inventory[23][1])
 	print("--------------------------------------------------------")
-	print("(!)OPTIONS 1, 2 and 3 DISALBLED FOR WORLDS 4,5 AND 6(!)")
+	print("(!)OPTIONS 2, 4 and 5 DISALBLED FOR WORLDS 4,5 AND 6(!)")
 	print("ALWAYS TALK TO TIM IMMEDIATELY ONCE YOU HAVE COMPLETED A QUEST! YOUR GAME WILL BREAK IF YOU DON'T!")
 	print("A. Exclusive Egg 1 - $1000")
 	print("1. Mine")
@@ -379,6 +379,8 @@ while True:
 		print("11. USE WORLD 3 KEY")
 	elif pickaxechecker == 50:
 		print("11. USE WORLD 4 KEY")
+	elif pickaxechecker == 56 and inventory[23][1] >= 25:
+		print("11. BECOME A PRO")
 	else:
 		if readthroughall == False:
 			print("11. Newsfeeds (!)")
@@ -614,6 +616,14 @@ while True:
 			world = "World 4 (Noob World) - Skill Realm"
 			money = 0
 			inventory.append(["Grass:",0])
+	elif choice == "11" and pickaxechecker == 56 and inventory[23][1] >= 25:
+		print("The pros accept you...")
+		print("(Hackneyed Actor Cunningly Kept Executing Riskyness)s are coming. They want you...")
+		pickaxe = "Reinforced Dirt Pickaxe"
+		pickaxes.append(["Reinforced Dirt Pickaxe",50])
+		world = "World 5 (Pro World) - Skill Realm"
+		money = 0
+		inventory.append(["Reinforced Grass:",0])
 	elif choice == "11":
 		os.system("clear")
 		print("BRAND NEW UPDATE WITH A SEASON!")
