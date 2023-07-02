@@ -353,13 +353,18 @@ while True:
 		print(inventory[18][0], inventory[18][1])
 		print(inventory[19][0], inventory[19][1])
 		print(inventory[20][0], inventory[20][1])
+	elif pickaxechecker == 52: #grass
+		print(inventory[21][0], inventory[21][1])
+	elif pickaxechecker == 54: #wood
+		print(inventory[21][0], inventory[21][1])
+	elif pickaxechecker == 56: #diamonds
+		print(inventory[21][0], inventory[21][1])
 	print("--------------------------------------------------------")
+	print("(!)OPTIONS 1, 2 and 3 DISALBLED FOR WORLDS 4,5 AND 6(!)")
 	print("ALWAYS TALK TO TIM IMMEDIATELY ONCE YOU HAVE COMPLETED A QUEST! YOUR GAME WILL BREAK IF YOU DON'T!")
+	print("A. Exclusive Egg 1 - $1000")
 	print("1. Mine")
-	if world != "World 4 (Noob World) - Skill Realm":
-		print("2. Sell")
-	else:
-		print("2. Sell (!DISALBLED FOR WORLDS 4,5 AND 6!)")
+	print("2. Sell")
 	print("3. Craft")
 	print("4. Equip")
 	print("5. Repair")
@@ -381,6 +386,35 @@ while True:
 			print("11. Newsfeeds")
 	print("12. Command Panel")
 	choice = input("Choose an option: ")
+	if choice == "A" and money >= 1000:
+		print("You will be able to sell skins in the future, and some inflation might happen 👀")
+		print("50% -> $100")
+		print("20% -> $250")
+		print("10% -> $500")
+		print("8% -> $1000")
+		print("7% -> $1500")
+		print("4% -> Floppa")
+		print("1% -> Sleipnir")
+		choice = input("Do it? (Y/N) ")
+		if choice == "Y":
+			money -= 1000
+			chance = random.random()
+			if chance <= 0.5:
+				print("You got $100! (-90%)")
+				money += 100
+			elif chance <= 0.7:
+				print("You got $250! (-75%)")
+				money += 250
+			elif chance <= 0.8:
+				print("You got $500! (-50%)")
+			elif chance <= 0.88:
+				print("You got $1000 (+0%)")
+			elif chance <= 0.95:
+				print("You got $1500 (+50%)")
+			elif chance <= 0.9899999999:
+				print("You got the 'Floppa' skin! (Event)")
+			elif chance <= 1:
+				print("YOU GOT THE 'SLEIPNIR' SKIN! (Event)")
 	if choice == "1":
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
