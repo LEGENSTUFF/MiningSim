@@ -7,6 +7,7 @@ from replit import db
 from threading import Thread as thread
 import datetime
 import pytz
+from random import choices
 from Choices1.one import one
 from Choices1.two import two
 from Choices1.three import three
@@ -126,8 +127,8 @@ while True:
 	# 24 is netherrack 26 is gold nugget 28 is quartz 30 is quartz and gold 32 is ancient debris 34 is netherite scrap 36 is netherite 38 is key 40 is endstone(pickaxe 20 in the list is [19])
 	os.system('clear')
 	print("Main Menu")
-	if world != "World 4 (Noob World) - Skill Realm"
-	print("Money: $" + str(money))
+	if world != "World 4 (Noob World) - Skill Realm":
+		print("Money: $" + str(money))
 	print("Skin:",skin)
 	if quests[0][1] < 5:
 		times = 5 - quests[0][1]
@@ -379,7 +380,7 @@ while True:
 		print("11. USE WORLD 3 KEY")
 	elif pickaxechecker == 50:
 		print("11. USE WORLD 4 KEY")
-	elif pickaxechecker == 56 and inventory[23][1] >= 25:
+	elif pickaxechecker == 56:
 		print("11. BECOME A PRO")
 	else:
 		if readthroughall == False:
@@ -389,6 +390,7 @@ while True:
 	print("12. Command Panel")
 	choice = input("Choose an option: ")
 	if choice == "A" and money >= 1000:
+		os.system("clear")
 		print("You will be able to sell skins in the future, and some inflation might happen 👀")
 		print("50% -> $100")
 		print("20% -> $250")
@@ -400,28 +402,29 @@ while True:
 		choice = input("Do it? (Y/N) ")
 		if choice == "Y":
 			money -= 1000
-			chance = random.random()
-			if chance <= 0.5:
+			chance = choices(population=["Sleipnir", "Floppa","$1500","$1000","$500","$250","$100"], weights=[0.01, 0.04, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
+			if chance == "$100":
 				print("You got $100! (-90%)")
 				money += 100
-			elif chance <= 0.7:
+			elif chance == "$250":
 				print("You got $250! (-75%)")
 				money += 250
-			elif chance <= 0.8:
+			elif chance == "$500":
 				print("You got $500! (-50%)")
 				money += 500
-			elif chance <= 0.88:
+			elif chance == "$1000":
 				print("You got $1000 (+0%)")
 				money += 1000
-			elif chance <= 0.95:
+			elif chance == "$1500":
 				print("You got $1500 (+50%)")
 				money += 1500
-			elif chance <= 0.9899999999:
+			elif chance == "Floppa":
 				print("You got the 'Floppa' skin! (Exclusive)")
 				skins.append(["Floppa","Exclusive"])
-			elif chance <= 1:
+			elif chance == "Sleipnir":
 				print("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
 				skins.append(["Sleipnir","Exclusive"])
+			input("Press [enter] to continue")
 	if choice == "1":
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
@@ -616,7 +619,7 @@ while True:
 			world = "World 4 (Noob World) - Skill Realm"
 			money = 0
 			inventory.append(["Grass:",0])
-	elif choice == "11" and pickaxechecker == 56 and inventory[23][1] >= 25:
+	elif choice == "11" and pickaxechecker == 56:
 		print("The pros accept you...")
 		print("(Hackneyed Actor Cunningly Kept Executing Riskyness)s are coming. They want you...")
 		pickaxe = "Reinforced Dirt Pickaxe"
@@ -774,12 +777,12 @@ while update == False:
 	#       "seconds")
 	# print("Next update soon!")
 	print("Previous update:")
-	print("v5.0 - Season Pass Update\n")
+	print("v5.1 - Noob World Update\n")
 	print("Next update:")
-	print("v5.1 - Noob Update\n")
+	print("v5.2 - Exclusive Update\n")
 	mont = dt.month
-	mon=6-dt.month
-	day=29-dt.day
+	mon=7-dt.month
+	day=6-dt.day
 	if day < 0:
 		if mont == 1 or mont == 3 or mont == 5 or mont == 7 or mont == 8 or mont == 10 or mont == 12:
 			day += 31

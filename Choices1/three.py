@@ -260,7 +260,7 @@ def three(pickaxes,inventory,money,quests,pickaxe):
 		if craftchoice == "1":
 			if inventory[22][1] >= 25:
 				pickaxes.append(["Wood Pickaxe",100])
-				inventory.append(["Diamonds":0])
+				inventory.append(["Diamonds:",0])
 				inventory[22][1] -= 25
 				pickaxe = "Wood Pickaxe"
 				print("You just got the WOOD PICKAXE (Auto-equipped)!!!")
