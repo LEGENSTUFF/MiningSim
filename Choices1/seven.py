@@ -1,7 +1,7 @@
 import os
 def seven(stars,level,skins):
 	os.system("clear")
-	print("Next season in 19 days! (Last updated: 29th June 2023)")
+	print("Next season in 12 days! (Last updated: 6th July 2023)")
 	print("Level:",level)
 	print("Stars:",stars)
 	print("Max level: 30")

@@ -777,12 +777,12 @@ while update == False:
 	#       "seconds")
 	# print("Next update soon!")
 	print("Previous update:")
-	print("v5.1 - Noob World Update\n")
-	print("Next update:")
 	print("v5.2 - Exclusive Update\n")
+	print("Next update:")
+	print("v5.3 - Pro Update\n")
 	mont = dt.month
 	mon=7-dt.month
-	day=6-dt.day
+	day=13-dt.day
 	if day < 0:
 		if mont == 1 or mont == 3 or mont == 5 or mont == 7 or mont == 8 or mont == 10 or mont == 12:
 			day += 31
