@@ -629,7 +629,7 @@ while True:
 		inventory.append(["Reinforced Grass:",0])
 	elif choice == "11":
 		os.system("clear")
-		print("BRAND NEW UPDATE WITH A SEASON!")
+		print("Exclusive eggs! Live now!")
 		print("1/1")
 		print("1. Next")
 		print("2. Exit")
