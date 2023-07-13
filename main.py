@@ -115,6 +115,103 @@ def save():
 			db["sidequests"] = sidequests
 			db["collections"] = collections
 
+def exclusive_egg(money, skins, wins):
+	money -= 1000
+	if ["Floppa","Exclusive"] and ["Sleipnir","Exclusive"] in skins:
+		chance = choices(population=["$5000","$1500","$1000","$500","$250","$100"], weights=[0.05, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
+		if chance == "$100":
+			wins.append("You got $100! (-90%)")
+			money += 100
+		elif chance == "$250":
+			wins.append("You got $250! (-75%)")
+			money += 250
+		elif chance == "$500":
+			wins.append("You got $500! (-50%)")
+			money += 500
+		elif chance == "$1000":
+			wins.append("You got $1000 (+0%)")
+			money += 1000
+		elif chance == "$1500":
+			wins.append("You got $1500 (+50%)")
+			money += 1500
+		elif chance == "$5000":
+			wins.append("You got $5000 (+400%)")
+		elif chance == "Floppa":
+			wins.append("You got the 'Floppa' skin! (Exclusive)")
+			skins.append(["Floppa","Exclusive"])
+		elif chance == "Sleipnir":
+			wins.append("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
+			skins.append(["Sleipnir","Exclusive"])
+	elif ["Sleipnir","Exclusive"] in skins:
+		chance = choices(population=["Floppa","$1500","$1000","$500","$250","$100"], weights=[0.05, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
+		if chance == "$100":
+			wins.append("You got $100! (-90%)")
+			money += 100
+		elif chance == "$250":
+			wins.append("You got $250! (-75%)")
+			money += 250
+		elif chance == "$500":
+			wins.append("You got $500! (-50%)")
+			money += 500
+		elif chance == "$1000":
+			wins.append("You got $1000 (+0%)")
+			money += 1000
+		elif chance == "$1500":
+			wins.append("You got $1500 (+50%)")
+			money += 1500
+		elif chance == "Floppa":
+			wins.append("You got the 'Floppa' skin! (Exclusive)")
+			skins.append(["Floppa","Exclusive"])
+		elif chance == "Sleipnir":
+			wins.append("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
+			skins.append(["Sleipnir","Exclusive"])
+	elif ["Floppa","Exclusive"] in skins:
+		chance = choices(population=["Sleipnir","$1500","$1000","$500","$250","$100"], weights=[0.05, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
+		if chance == "$100":
+			wins.append("You got $100! (-90%)")
+			money += 100
+		elif chance == "$250":
+			wins.append("You got $250! (-75%)")
+			money += 250
+		elif chance == "$500":
+			wins.append("You got $500! (-50%)")
+			money += 500
+		elif chance == "$1000":
+			wins.append("You got $1000 (+0%)")
+			money += 1000
+		elif chance == "$1500":
+			wins.append("You got $1500 (+50%)")
+			money += 1500
+		elif chance == "Floppa":
+			wins.append("You got the 'Floppa' skin! (Exclusive)")
+			skins.append(["Floppa","Exclusive"])
+		elif chance == "Sleipnir":
+			wins.append("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
+			skins.append(["Sleipnir","Exclusive"])
+	else:
+		chance = choices(population=["Sleipnir","Floppa","$1500","$1000","$500","$250","$100"], weights=[0.01,0.04, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
+		if chance == "$100":
+			wins.append("You got $100! (-90%)")
+			money += 100
+		elif chance == "$250":
+			wins.append("You got $250! (-75%)")
+			money += 250
+		elif chance == "$500":
+			wins.append("You got $500! (-50%)")
+			money += 500
+		elif chance == "$1000":
+			wins.append("You got $1000 (+0%)")
+			money += 1000
+		elif chance == "$1500":
+			wins.append("You got $1500 (+50%)")
+			money += 1500
+		elif chance == "Floppa":
+			wins.append("You got the 'Floppa' skin! (Exclusive)")
+			skins.append(["Floppa","Exclusive"])
+		elif chance == "Sleipnir":
+			wins.append("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
+			skins.append(["Sleipnir","Exclusive"])
+	return money, skins, wins
 
 while True:
 	# if username != "MiningSim-Dev-Team":
@@ -399,32 +496,24 @@ while True:
 		print("7% -> $1500")
 		print("4% -> Floppa")
 		print("1% -> Sleipnir")
-		choice = input("Do it? (Y/N) ")
-		if choice == "Y":
-			money -= 1000
-			chance = choices(population=["Sleipnir", "Floppa","$1500","$1000","$500","$250","$100"], weights=[0.01, 0.04, 0.07, 0.08, 0.1, 0.2, 0.5])[0]
-			if chance == "$100":
-				print("You got $100! (-90%)")
-				money += 100
-			elif chance == "$250":
-				print("You got $250! (-75%)")
-				money += 250
-			elif chance == "$500":
-				print("You got $500! (-50%)")
-				money += 500
-			elif chance == "$1000":
-				print("You got $1000 (+0%)")
-				money += 1000
-			elif chance == "$1500":
-				print("You got $1500 (+50%)")
-				money += 1500
-			elif chance == "Floppa":
-				print("You got the 'Floppa' skin! (Exclusive)")
-				skins.append(["Floppa","Exclusive"])
-			elif chance == "Sleipnir":
-				print("YOU GOT THE 'SLEIPNIR' SKIN! (Exclusive)")
-				skins.append(["Sleipnir","Exclusive"])
-			input("Press [enter] to continue")
+		moneychoice = input("Buy how many? (1 ($1000), 10 ($10000), 100 ($100000)) ")
+		wins = []
+		oldmoney = money
+		oldskins = skins
+		if moneychoice == "1":
+			money, skins, wins = exclusive_egg(money, skins, wins)
+		elif moneychoice == "10" and money >= 10000:
+			for i in range(10):
+				money, skins, wins = exclusive_egg(money, skins, wins)
+		elif moneychoice == "100" and money >= 100000:
+			for i in range(100):
+				money, skins, wins = exclusive_egg(money, skins, wins)
+		temp3 = []
+		for element in oldskins:
+			if element not in skins:
+				temp3.append(element)
+		print("You won",str(money - oldmoney),"and got",*temp3)
+		input("Press [enter] to continue")
 	if choice == "1":
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
@@ -651,7 +740,7 @@ while True:
 			print("5. View ______ and ______")
 		elif username == "MiningSim-Dev-Team":
 			print("Owner:")
-			print("1. Give self $10000")
+			print("1. Give self a lot of money")
 			print("2. Give self next pickaxe")
 			print("3. View quests")
 			print("4. Complete quest")
@@ -659,7 +748,7 @@ while True:
 			print("6. 10k stars")
 			choice = input("choose:")
 			if choice == "1":
-				money += 10000
+				money += 100000000000000000000000000000
 			elif choice == "2":
 				pickaxes.append(["Admin",100000000000])
 				inventory.append(["Admin",100000000000000000])
