@@ -517,7 +517,7 @@ while True:
 	if choice == "1":
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
-	elif choice == "2":
+	elif choice == "2" and world != "World 4 (Noob World) - Skill Realm":
 		pickaxes,pickaxe,inventory,money,enchantments = two(pickaxes,pickaxe,inventory,money,enchantments)
 		pass
 	elif choice == "3":
@@ -871,7 +871,7 @@ while update == False:
 	print("v5.3 - Pro Update\n")
 	mont = dt.month
 	mon=7-dt.month
-	day=13-dt.day
+	day=20-dt.day
 	if day < 0:
 		if mont == 1 or mont == 3 or mont == 5 or mont == 7 or mont == 8 or mont == 10 or mont == 12:
 			day += 31

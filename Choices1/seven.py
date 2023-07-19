@@ -1,7 +1,7 @@
 import os
 def seven(stars,level,skins):
 	os.system("clear")
-	print("Next season in 12 days! (Last updated: 6th July 2023)")
+	print("Next season in 24 days! (Last updated: 19th July 2023)")
 	print("Level:",level)
 	print("Stars:",stars)
 	print("Max level: 30")
@@ -19,8 +19,8 @@ def seven(stars,level,skins):
 			print("Would you like to level up? (Y/N)")
 			choice = input("")
 			if choice == "Y":
-				print("SKIN UNLOCKED: MINER")
-				skins.append(["Miner","Uncommon"])
+				print("SKIN UNLOCKED: GUIDE")
+				skins.append(["Guide","Common"])
 				level += 1
 				stars -= 2
 	elif level == 10 or level == 11 or level == 12 or level == 13 or level == 14 or level == 15 or level == 16 or level == 17 or level == 18:
@@ -37,8 +37,8 @@ def seven(stars,level,skins):
 			print("Would you like to level up? (Y/N)")
 			choice = input("")
 			if choice == "Y":
-				print("SKIN UNLOCKED: COLLECTOR")
-				skins.append(["Collector","Epic"])
+				print("SKIN UNLOCKED: EXPLORER")
+				skins.append(["Explorer","Rare"])
 				level += 1
 				stars -= 3
 	elif level == 20 or level == 21 or level == 22 or level == 23 or level == 24:
@@ -63,8 +63,8 @@ def seven(stars,level,skins):
 			print("Would you like to level up? (Y/N)")
 			choice = input("")
 			if choice == "Y":
-				print("SKIN UNLOCKED: CURATOR")
-				skins.append(["Curator","Legendary"])
+				print("SKIN UNLOCKED: ARCHEOLOGIST")
+				skins.append(["Archeologist","Legendary"])
 				level += 1
 				stars -= 5
 	elif level == 30:
