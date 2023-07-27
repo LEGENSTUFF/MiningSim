@@ -283,6 +283,7 @@ while True:
 		print(sidequests[1][0],"Mine",sidequests[1][2],"more times!")
 		print(sidequests[2][0],"Repair",sidequests[2][2],"more pickaxe durability!")
 		print("Stars:",stars)
+		print("Levels:",level)
 	print("---------------------------------------------")
 	print("Pickaxe Info:")
 	print("Pickaxe:", pickaxe)
@@ -518,7 +519,7 @@ while True:
 		enchantments,pickaxes,pickaxe,inventory,quests,sidequests = one(enchantments,pickaxes,pickaxe,inventory,quests,sidequests)
 		pass
 	elif choice == "2" and world != "World 4 (Noob World) - Skill Realm":
-		pickaxes,pickaxe,inventory,money,enchantments = two(pickaxes,pickaxe,inventory,money,enchantments)
+		pickaxes,pickaxe,inventory,money,enchantments,quests = two(pickaxes,pickaxe,inventory,money,enchantments,quests)
 		pass
 	elif choice == "3":
 		pickaxes, inventory, money,quests,pickaxe = three(pickaxes,inventory,money,quests,pickaxe)
@@ -534,11 +535,12 @@ while True:
 		print("WE ARE HIRING! \nhttps://forms.gle/LgGFPJDuPKRdzPco9")
 		print("OUR WEBSITE! \nhttps://miningsim.weebly.com/")
 		print("OUR TWITTER! \nhttps://twitter.com/MiningSimUpd")
-		print("OUR DISCORD AND OWNERS YOUTUBE DISCORD! \nhttps://discord.gg/DRXRtx6RXk")
+		print("OUR DISCORD! \nhttps://discord.gg/fFyzXzvv55")
 		input("Press [enter] to continue!")
 	elif choice == "7":
 		quests,money,world = six(quests,money,world)
 	elif choice == "8":
+		input("text")
 		stars,level,skins = seven(stars,level,skins)
 	elif choice == "10":
 		s = thread(target=save)
